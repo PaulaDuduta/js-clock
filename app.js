@@ -10,32 +10,43 @@ const days = [
   'Friday',
   'Saturday',
 ];
+let alarmTime = null;
+let alarmTimeOut = null;
 
 //-->
 function getTime() {
   const date = new Date();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let seconds = date.getSeconds();
+  let hours = formatTime(date.getHours());
+  let minutes = formatTime(date.getMinutes());
+  let seconds = formatTime(date.getSeconds());
   // const milliseconds = date.getMilliseconds();
 
-  if (hours < 10) {
-    hours = '0' + hours;
-  }
+  //v1
+  // if (hours < 10) {
+  //   hours = '0' + hours;
+  // }
 
-  if (minutes < 10) {
-    minutes = '0' + minutes;
-  }
+  // if (minutes < 10) {
+  //   minutes = '0' + minutes;
+  // }
 
-  if (seconds < 10) {
-    seconds = '0' + seconds;
+  // if (seconds < 10) {
+  //   seconds = '0' + seconds;
+  // }
+
+  //v2
+  function formatTime(time) {
+    if (time < 10) {
+      return '0' + time;
+    }
+    return time;
   }
 
   return `${hours} : ${minutes} : ${seconds}`;
 }
 
 setInterval(function () {
-  localTime.innerHTML = getTime();
+  localTime.innerText = getTime();
 }, 1000);
 //<--
 
@@ -70,4 +81,38 @@ function getDay() {
 }
 
 localDay.innerHTML = `${getDay()} :`;
+//<--
+
+//--> alarm
+function setAlarmTime(value) {
+  alarmTime = value;
+}
+
+function setAlarm() {
+  if (alarmTime) {
+    const current = new Date();
+    const timeToAlarm = new Date(alarmTime);
+
+    console.log(timeToAlarm);
+    if (timeToAlarm > current) {
+      const timeout = timeToAlarm.getTime() - current.getTime();
+      alarmTimeOut = setTimeout(
+        () => alert('Time to wake up, buddy!'),
+        timeout,
+      );
+      alert('Alarm is set');
+
+      alarmTime = null;
+    }
+  }
+}
+//<--
+
+//--> clear alarm
+function clearAlarm() {
+  if (alarmTimeOut) {
+    clearTimeout(alarmTimeOut);
+    alert('Alarm cleared');
+  }
+}
 //<--

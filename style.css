@@ -92,31 +92,19 @@ h6 {
 /* <-- fonts */
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%); */
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  height: 100vh;
+  background: url('/pexels-pixabay.jpg') no-repeat;
+  background-size: cover;
+  background-position: 20px bottom 20px left;
   font-family: 'Technology', sans-serif;
   font-size: 60px;
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 60px;
   color: antiquewhite;
   text-align: center;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 body > section > div {
@@ -124,8 +112,48 @@ body > section > div {
   gap: 10px;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  z-index: 1;
 }
 
 body > section {
-  background-color: black;
+  margin-top: 50px;
+  border-width: 10px;
+  border-style: solid;
+  border-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%) 1;
+  border-radius: 20px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.alarmTimeClock {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.alarmTimeClock .controls {
+  display: flex;
+  gap: 40px;
+}
+
+.alarmTimeClock .controls button {
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: antiquewhite;
+}
+
+.alarmTimeClock > input {
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+  padding-left: 10px;
 }

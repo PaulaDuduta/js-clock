@@ -28,7 +28,25 @@
     <p class="localTime"></p>
   </section>
 
+  <div class='alarmTimeClock'>
+    <input
+      onchange="setAlarmTime(this.value)"
+      type="datetime-local"
+      name="alarmTime"
+      id=""
+    >
+    <div class="controls">
+      <button
+        onclick="setAlarm()"
+        class="button setAlarm"
+      >Set alarm</button>
+      <button
+        onclick="clearAlarm()"
+        class="button clearAlarm"
+      >Clear alarm</button>
+    </div>
 
+  </div>
   <script src="app.js"></script>
 </body>
 
