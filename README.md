@@ -12,7 +12,7 @@ Users should be able to:
 - View the optimal layout depending on their device's screen size.
 - To view the correct local timezone.
 - To set and clear the alarm.
-- To receive an notification when the alarm "rings".
+- To receive a notification when the alarm "rings".
 
 ### Screenshot
 
