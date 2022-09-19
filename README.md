@@ -10,9 +10,9 @@ The website design was realized by me.
 Users should be able to:
 
 - View the optimal layout depending on their device's screen size.
-- To view the correct local timezone.
-- To set and clear the alarm.
-- To receive a notification when the alarm "rings".
+- View the correct local timezone.
+- Set and clear the alarm.
+- Receive a notification when the alarm "rings".
 
 ### Screenshot
 
